@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fiber-stats/bookroute"
+	"fiber-stats/router"
 	"fiber-stats/util"
 	"fmt"
 	"log"
@@ -30,7 +30,7 @@ func main() {
 	app := fiber.New()
 	db := util.Init(connectionStringURL)
 
-	bookroute.RegisterRoutes(app, db)
+	router.RegisterRoutes(app, db)
 
 	app.Listen(fmt.Sprintf(":%d", port))
 
